@@ -18,7 +18,6 @@ const MoviesHome = () => {
         {movies && movies.map(movie => <Movie key={movie.id} movie={movie} imageBaseUrl={imageBaseUrl} />)}
       </main>
       <Pagination />
-      {/* <div style={{ height: '5vh' }}></div> */}
       <Footer />
     </div>
   );

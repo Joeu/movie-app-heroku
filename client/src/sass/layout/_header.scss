@@ -27,16 +27,24 @@
     justify-content: space-between;
     align-content: flex-end;
 
+    img {
+      float: left;
+      width: 80px;
+      height: auto;
+      @include on-hover;
+    }
+    
     @include apply-layout(phone) {
       padding: 0;
       flex-direction: column;
     }
     
-    a {
+    img {
       float: left;
-      text-decoration: none;
+      width: 45px;
+      height: auto;
     }
-
+    
     i,
     input {
       font-size: x-large;
