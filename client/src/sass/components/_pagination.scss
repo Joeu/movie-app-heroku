@@ -19,6 +19,7 @@
   a {
     padding: .2em;
     &:hover {
+      cursor: pointer;
       color: $color-text-secondary-selected;
       font-size: 2em;
     }

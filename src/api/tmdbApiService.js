@@ -78,4 +78,4 @@ export const fetchPage = async ({ page, parsedFromSearch, title }) => {
 const filterCachedId = async (id) =>
   cacheService.get(UPCOMING_CACHE_KEY)
   && cacheService.get(UPCOMING_CACHE_KEY).results
-  && cacheService.get(UPCOMING_CACHE_KEY).filter(movie => movie.id === id)[0];
+  && cacheService.get(UPCOMING_CACHE_KEY).results.filter(movie => movie.id === id)[0];

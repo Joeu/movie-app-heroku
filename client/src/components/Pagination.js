@@ -17,7 +17,7 @@ const Pagination = () => {
           <a
             className={currentPage === pageNum ? "active" : "not-active"}
             onClick={() => goToPage(pageNum, fromSearch, title)}
-            href="!#">{pageNum}
+          >{pageNum}
           </a>
         </span>
       ))}

@@ -17,7 +17,7 @@ app.get('/api/data/', (req, res) => {
   res.send('{"result":"true"}');
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.send(express.static(path.join(__dirname, '../client/build/index.html')));
 });
 
