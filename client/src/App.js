@@ -1,35 +1,29 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from 'react';
 
-function App() {
+import { moviesReducer } from './reducers/moviesReducer';
+import { MoviesProvider } from './providers/moviesProvider';
 
-  useEffect(() => {
-    fetch('/api/data')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
-  }, []);
+import Home from './components/Home';
+
+const initialState = {
+  loading: false,
+  movies: [],
+  totalPages: 0,
+  numResults: 0,
+  fromSearch: false,
+  currentPage: 0,
+  imageBaseUrl: '',
+  title: '',
+};
+
+const App = () => {
+  const store = useReducer(moviesReducer, initialState);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MoviesProvider value={store}>
+      <Home />
+    </MoviesProvider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,33 @@
+.movie-card {
+  
+  width: 15%;
+  padding-bottom: 4rem;
+
+  @include apply-layout(phone) {
+    position: relative;
+    width: 100%;
+    height: 35rem;
+    overflow: hidden;
+    padding: 5rem 0;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include apply-layout(tab-port) {
+    width: 30%;
+  }
+
+  @include apply-layout(tab-land) {
+    width: 20%;
+  }
+  
+  img{
+    @include on-hover;
+    width: 90%;
+    height: auto;
+    background-size: cover;
+  }
+}
