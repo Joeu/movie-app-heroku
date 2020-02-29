@@ -10,20 +10,16 @@ var _path2 = _interopRequireDefault(_path);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = (0, _express2.default)();
 
-// app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(_express2.default.static(_path2.default.join(__dirname, '../client/build')));
 
-// app.get('/api/data/', (req, res) => {
-//   res.send('{"result":"true"}');
-// });
+app.get('/api/data/', function (req, res) {
+  res.send('{"result":"true"}');
+});
 
 app.get('*', function (req, res) {
-  res.send('Hello, world!');
-  // res.send(express.static(path.join(__dirname, '../client/build')));
+  res.send(_express2.default.static(_path2.default.join(__dirname, '../client/build/index.html')));
 });
 
 module.exports = app;
