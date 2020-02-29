@@ -10,11 +10,6 @@
     "clean": "rm -rf ./build && mkdir build",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
-  "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "nodemon": "^2.0.2"
-  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -26,7 +21,10 @@
     "morgan": "~1.9.1",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
-    "node-cache": "^5.1.0"
+    "node-cache": "^5.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "nodemon": "^2.0.2"
   },
   "engines": {
     "node": "12.x"
