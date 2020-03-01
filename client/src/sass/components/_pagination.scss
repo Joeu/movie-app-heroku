@@ -1,0 +1,27 @@
+.pagination {
+  height: 15vh;
+  align-self: center;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .active {
+    color: $color-text-secondary-selected;
+    text-decoration: underline;
+  }
+  
+  .not-active {
+    font-size: 1.8em;
+  }
+  
+  a {
+    padding: .2em;
+    &:hover {
+      cursor: pointer;
+      color: $color-text-secondary-selected;
+      font-size: 2em;
+    }
+  }
+}
