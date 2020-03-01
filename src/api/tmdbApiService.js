@@ -23,6 +23,13 @@ export const fetchUpcoming = async () => {
       return cachedMovies;
     } else {
       const response = await axios.get(UPCOMING_MOVIES_URL);
+      console.log('--------------');
+      console.log('--------------');
+      console.log('--------------');
+      console.log('RESPONSE --- ', response);
+      console.log('--------------');
+      console.log('--------------');
+      console.log('--------------');
       cacheService.set(UPCOMING_CACHE_KEY, response.data);
       return response.data;
     }
