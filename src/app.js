@@ -1,14 +1,10 @@
 import express from 'express';
 import path from 'path';
 import 'dotenv/config';
-import cors from 'cors';
 
 import routes from './routes';
 
 var app = express();
-
-app.enable('etag');
-app.use(cors());
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
