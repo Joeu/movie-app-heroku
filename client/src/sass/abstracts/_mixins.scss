@@ -6,6 +6,13 @@
   }
 }
 
+@mixin scale {
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 @mixin apply-layout($breakpoint) {
   @if $breakpoint == phone {
       @media only screen and (max-width: 640px) { @content };
