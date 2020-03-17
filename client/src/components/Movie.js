@@ -23,8 +23,8 @@ const Movie = ({ movie, imageBaseUrl }) => {
 
   return (
     <div className="movie-card">
-      <h2>{movie.title}</h2>
       <img src={`${imageBaseUrl}${movie.poster_path}`} onClick={fetchMovieInfo} alt={movie.title} />
+      <h2>{movie.title}</h2>
       <MovieModal
         movieInfo={movieInfo}
         isVisible={isVisible}

@@ -5,10 +5,9 @@
 
   @include apply-layout(phone) {
     position: relative;
-    width: 100%;
-    height: 35rem;
+    width: 30%;
     overflow: hidden;
-    padding: 5rem 0;
+    padding: 2rem 0;
 
     img {
       width: 100%;
@@ -26,6 +25,7 @@
   
   img{
     @include on-hover;
+    @include scale;
     width: 90%;
     height: auto;
     background-size: cover;

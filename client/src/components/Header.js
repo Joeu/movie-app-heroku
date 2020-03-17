@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="header-bg">
         <i className="fa fa-film" />
-        <h1> Searcher</h1>
+        <h1>Searcher</h1>
       </div>
       <nav className="navigation">
         <img src={tmdblogo} alt="The movie database" onClick={() => window.open('https://developers.themoviedb.org/3/getting-started')} />

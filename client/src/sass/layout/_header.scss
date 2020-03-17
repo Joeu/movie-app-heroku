@@ -5,19 +5,31 @@
     display: flex;
     justify-content: center;
 
-    height: 10vh;
     clip-path: polygon(0 0, 100% 0, 100% 8vh, 0 100%);
+
+    @include scale;
 
     h1, i {
       color: $color-primary;
     }
 
     h1 {
+      text-align: start;
       font-size: 5em;
     }
     
     i {
       font-size: 10em;
+    }
+
+    @include apply-layout(phone) {
+      h1 {
+        font-size: 4em;
+      }
+
+      i {
+        font-size: 6em;
+      }
     }
   }
 
@@ -36,7 +48,6 @@
     
     @include apply-layout(phone) {
       padding: 0;
-      flex-direction: column;
     }
     
     img {
@@ -54,6 +65,8 @@
       &:focus {
         opacity: $opacity-selected-hover;
       }
+
+      @include on-hover;
     }
   }
 }
