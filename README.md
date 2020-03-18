@@ -54,7 +54,7 @@ Go to http://localhost:3001 and you should see the home page.
 
 ## Authors
 
-* **Joeumar Souza** - *Initial work* - [PurpleBooth](https://github.com/joeu)
+* **Joeumar Souza** GitHub(https://github.com/joeu)
 
 ## TODO
 
