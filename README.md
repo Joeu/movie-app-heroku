@@ -16,9 +16,6 @@ Follow the instructions below to get a copy of the project running in your local
 
 You will need to have node installed (I used v12.6.0)
 
-```
-Give examples
-```
 
 ### Installing
 
