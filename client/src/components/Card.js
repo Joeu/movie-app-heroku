@@ -5,7 +5,7 @@ import MovieModal from './MovieModal';
 
 import { SERVER_BASE_URL } from '../utils/constants';
 
-const Movie = ({ movie, imageBaseUrl }) => {
+const Card = ({ movie, imageBaseUrl }) => {
   const [movieInfo, setMovieInfo] = useState(movie);
 
   const { isVisible, toggle } = useModal();
@@ -22,9 +22,9 @@ const Movie = ({ movie, imageBaseUrl }) => {
   }
 
   return (
-    <div className="movie-card">
-      <img src={`${imageBaseUrl}${movie.poster_path}`} onClick={fetchMovieInfo} alt={movie.title} />
-      <h2>{movie.title}</h2>
+    <div className="card">
+      <img className="card__img" src={`${imageBaseUrl}${movie.poster_path}`} onClick={fetchMovieInfo} alt={movie.title} />
+      <h2 className="heading-secondary">{movie.title}</h2>
       <MovieModal
         movieInfo={movieInfo}
         isVisible={isVisible}
@@ -35,4 +35,4 @@ const Movie = ({ movie, imageBaseUrl }) => {
   )
 }
 
-export default Movie;
+export default Card;

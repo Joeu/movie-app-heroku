@@ -13,12 +13,9 @@ const Pagination = () => {
   return (
     <section className="pagination">
       {currentPage > 0 && pages.length && pages.map(pageNum => (
-        <span key={pageNum}>
-          <a
-            className={currentPage === pageNum ? "active" : "not-active"}
-            onClick={() => goToPage(pageNum, fromSearch, title)}
-          >{pageNum}
-          </a>
+        <span key={pageNum} className="pagination__link"
+          onClick={() => goToPage(pageNum, fromSearch, title)}
+        >{pageNum}
         </span>
       ))}
     </section>

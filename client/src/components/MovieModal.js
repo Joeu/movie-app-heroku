@@ -8,20 +8,20 @@ const MovieModal = ({ isVisible, hide, movieInfo, imageBaseUrl }) =>
 
 const InfoRow = (info, content) => (
   <span className="info-row">
-    <h2>{info}</h2>
-    <p>
+    <h2 className="heading-secondary">{info}</h2>
+    <p className="paragraph">
       {content}
     </p>
   </span>
 )
 
 const renderModalContent = ({ hide, movieInfo, imageBaseUrl }) => ReactDOM.createPortal(
-  <React.Fragment>
+  <>
     <div className="modal-overlay" />
     <div className="modal-wrapper" aria-modal aria-hidden tabIndex={-1} role="dialog">
       <div className="modal">
         <div className="modal-header">
-          <h2>{movieInfo.title}</h2>
+          <h2 className="heading-secondary">{movieInfo.title}</h2>
           <button type="button" className="modal-close-button" data-dismiss="modal" aria-label="Close" onClick={hide}>
             <span aria-hidden="true">&times;</span>
           </button>
@@ -35,7 +35,7 @@ const renderModalContent = ({ hide, movieInfo, imageBaseUrl }) => ReactDOM.creat
         {InfoRow('Sinopse:', movieInfo.overview)}
       </div>
     </div>
-  </React.Fragment>, document.body
+  </>, document.body
 );
 
 export default MovieModal;

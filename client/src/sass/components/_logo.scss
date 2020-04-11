@@ -1,0 +1,13 @@
+.logo {
+    margin-left: 2rem;
+    align-self: center;
+    
+    &__img {
+        height: 7rem;
+        background-color: transparent;
+
+        @include apply-layout(phone) {
+            height: 4rem;
+        }
+    }
+}

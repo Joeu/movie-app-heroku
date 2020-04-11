@@ -1,0 +1,28 @@
+.search-form {
+    flex: 0 0 40%;
+    align-items: center;
+    justify-content: center;
+
+    @include apply-layout(phone) {
+        flex: 1;
+    }
+    
+    &__input {
+        font-size: 1.6rem;
+        border: none;
+        padding: .4rem;
+        border-radius: .5rem;
+        width: 70%;
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+            width: 80%;
+        }
+    }
+
+    &__icon {
+        margin-left: .5rem;
+        @include on-hover;
+    }
+}

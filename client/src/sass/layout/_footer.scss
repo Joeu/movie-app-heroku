@@ -1,25 +1,57 @@
 .footer {
-  height: 10vh;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  font-size: 1.4rem;
+  color: lightgrey;
+  padding: 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  
-  hr, i {
-    color: $color-text-primary;
-    opacity: $color-text-primary-opacity;
+  justify-content: center;
+  align-content: center;
+  border-top: .1rem solid rgba($color-text-primary, .8rem);
+  border-top-width: 80%;
+
+  @include apply-layout(phone) {
+    flex-direction: column;
+  }
+
+  &__external-links {
+    flex: 1;
+    align-self: center;
   }
   
-  i {
-    padding: .2em;
-    font-size: xx-large;
+  &__credits {
+    align-self: center;
+    flex: 1;
+  }
+  
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    &:link,
+    &:visited {
+      font-size: 1.4rem;
+      color: lightgrey;
+    }
+  }
+
+  &__tmdb-logo {
+    align-self: center;
+    height: 3.5rem;
+    width: 3.5rem;
     @include on-hover;
   }
 
-  hr {
-    width: 100%;
+  &__icon {
+    align-self: center;
+    color: $color-text-primary;
+    opacity: $color-text-primary-opacity;
+    padding: .2em;
+    font-size: 3rem;
+    @include on-hover;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
   }
 }
