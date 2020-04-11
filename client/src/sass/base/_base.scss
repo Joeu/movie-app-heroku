@@ -16,15 +16,8 @@ html {
 body {
   box-sizing: border-box;
   height: 100vh;
-  padding: 0 3rem; /* Dividing 30px by 10 - our font-size - giving 3rem */
 
   @include apply-layout(phone) {
     padding: 0;
-  }
-
-  i {
-    &:hover {
-      cursor: pointer;
-    }
   }
 }

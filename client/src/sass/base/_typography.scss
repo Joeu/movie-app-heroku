@@ -1,25 +1,41 @@
 body {
   font-family: "Lato", sans-serif; /* Everything related to fonts, goes in body */
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: $color-text-primary;
+  text-align: center;
+}
 
-  h1 {
-    font-size: xx-large;
+.heading-primary {
+  font-size: 5rem;
+
+  @include apply-layout(phone) {
+    h1 {
+      font-size: 4em;
+    }
   }
-  
-  h1, p {
-    color: $color-text-secondary;
+}
+
+.heading-secondary {
+  font-size: medium;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.paragraph {
+  color: $color-text-secondary;
+  font-size: 1.8rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
   }
-  
-  h2, p {
-    font-size: large;
-  }
-  
-  a {
-    font-size: 20px;
-    color: $color-text-secondary;
-    text-decoration: none;
-  }
+}
+
+.anchor-primary {
+  font-size: 2rem;
+  text-decoration: none;
+  color: $color-text-secondary;
 }

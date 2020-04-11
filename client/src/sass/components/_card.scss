@@ -1,4 +1,4 @@
-.movie-card {
+.card {
   
   width: 15%;
   padding-bottom: 4rem;
@@ -7,21 +7,7 @@
     position: relative;
     width: 30%;
     overflow: hidden;
-    padding: 2rem 0;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-    h2 {
-      font-size: medium;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-    }
+    padding: 1rem .5rem;
   }
 
   @include apply-layout(tab-port) {
@@ -31,12 +17,18 @@
   @include apply-layout(tab-land) {
     width: 20%;
   }
-  
-  img{
+
+  &__img{
+    box-shadow: 0 1rem 1rem rgba(#fff, .1);
     @include on-hover;
-    @include scale;
+    @include scale-on-hover(.2s, 1.05);
     width: 90%;
     height: auto;
     background-size: cover;
+
+    @include apply-layout(phone) {
+      width: 100%;
+      height: auto;
+    }
   }
 }

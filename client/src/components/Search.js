@@ -5,14 +5,15 @@ const Search = () => {
   const { searchText, handleSearchInputChange, doSearch } = useSearchMovies();
 
   return (
-    <form onSubmit={doSearch}>
+    <form className="search-form" onSubmit={doSearch}>
       <input
+        className="search-form__input"
         value={searchText}
         placeholder="Search..."
         onChange={handleSearchInputChange}
         type="text"
       />
-      <i onClick={doSearch} className="fa fa-search" />
+      <i onClick={doSearch} className="search-form__icon fa fa-search" />
     </form>
   );
 };

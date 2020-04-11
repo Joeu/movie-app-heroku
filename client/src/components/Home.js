@@ -1,26 +1,19 @@
 import React from 'react';
 
 import Header from './Header';
-import Movie from './Movie';
-import Footer from './Footer';
+import Main from './Main';
 import Pagination from './Pagination';
+import Footer from './Footer';
 
-import { useUpcomingMovies } from '../customHooks/useUpcomingMovies';
-
-const MoviesHome = () => {
-  const { loading, movies, imageBaseUrl } = useUpcomingMovies();
-
+const Home = () => {
   return (
-    <div className="page-container">
+    <>
       <Header />
-      <main className="cards-container">
-        {loading && <span>Loading...</span>}
-        {movies && movies.map(movie => <Movie key={movie.id} movie={movie} imageBaseUrl={imageBaseUrl} />)}
-      </main>
+      <Main />
       <Pagination />
       <Footer />
-    </div>
+    </>
   );
 };
 
-export default MoviesHome;
+export default Home;
