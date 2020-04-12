@@ -5,8 +5,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  border-top: .1rem solid rgba($color-text-primary, .8rem);
-  border-top-width: 80%;
+  background-color: rgba(#000000, .4);
 
   @include apply-layout(phone) {
     flex-direction: column;
@@ -33,13 +32,6 @@
       font-size: 1.4rem;
       color: lightgrey;
     }
-  }
-
-  &__tmdb-logo {
-    align-self: center;
-    height: 3.5rem;
-    width: 3.5rem;
-    @include on-hover;
   }
 
   &__icon {

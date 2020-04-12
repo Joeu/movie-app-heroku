@@ -12,7 +12,7 @@ const Header = () => {
       </div>
       <Search />
       <nav className="navigation">
-        <img className="footer__tmdb-logo" src={tmdblogo} alt="The movie database" onClick={() => window.open('https://developers.themoviedb.org/3/getting-started')} />
+        <img className="navigation__tmdb-logo" src={tmdblogo} alt="The movie database" onClick={() => window.open('https://developers.themoviedb.org/3/getting-started')} />
       </nav>
     </header>
   );
