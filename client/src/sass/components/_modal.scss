@@ -1,71 +1,162 @@
 .modal {
-  z-index: 100;
-  background: $color-bg-primary;
-  position: relative;
-  margin: 1.75rem auto;
-  border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
-
-  .info-row {
-    display: 'flex';
-    flex-direction: 'row';
-    flex-wrap: 'wrap';
-  }
-
-  @include apply-layout(phone) {
-    width: 100%;
-  }
-
-  @include apply-layout(tab-port) {
-    width: 40%;
-  }
-
-  @include apply-layout(tab-land) {
-    width: 30%;
-  }
-
-  img {
-    width: 100%;
-  }
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.modal-close-button {
-  font-size: 2rem;
-  font-weight: 700;
-  background-color: transparent;
-  color: $color-primary;
-  cursor: pointer;
-  border: none;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1040;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: .5;
-}
-
-.modal-wrapper {
   position: fixed;
   top: 0;
   left: 0;
 
-  // transform: translate(-50%, -50%);
-
-  z-index: 1050;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
   outline: 0;
+  backdrop-filter: blur(2px);
+
+  &__fadeout {
+    animation: fade-out .2s ease-in-out;
+  }
+
+  &__content {
+    background-color: $color-bg-secondary;
+    padding: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    text-align: justify;
+    text-decoration: none;
+
+    animation: fade-in .2s ease-in-out;
+
+    &__close-button:active {
+      animation: fade-out .2s ease-in-out .05;
+    }
+
+    @include apply-layout(big-desktop) {
+      width: 70%;
+    }
+
+    @include apply-layout(tab-port) {
+      width: 80%;
+    }
+    
+    @include apply-layout(phone) {
+      width: 90%;
+    }
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: $color-text-primary;
+    transition: transform, scale .1s;
+    outline: none;
+
+    &:hover {
+      color: $color-text-secondary-selected;
+      transform: scale(1.2);
+    }
+
+    @include apply-layout(phone) {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2.5rem;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: $color-text-secondary;
+  }
+
+  &__release-date {
+    margin-right: auto;
+  }
+
+  &__vote-count {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4rem;
+    
+    @include apply-layout(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__backdrop {
+    width: max-content;
+    height: max-content;
+    align-self: center;
+  }
+
+  &__overview {
+    padding-left: 1.5rem;
+
+    p:not(:last-child) {
+      padding-bottom: .5rem;
+    }
+
+    @include apply-layout(phone) {
+      padding-left: 0;
+      padding-top: .5rem;
+    }
+  }
+  
+  &__imdb-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__imdb-logo {
+    height: 1.7rem;
+    align-self: center;
+    padding-left: .5rem;
+    cursor: pointer;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
 }

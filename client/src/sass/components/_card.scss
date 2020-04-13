@@ -3,19 +3,19 @@
   width: 15%;
   padding-top: 2rem;
 
-  @include apply-layout(phone) {
-    position: relative;
-    width: 30%;
-    overflow: hidden;
-    padding: 1rem .5rem;
+  @include apply-layout(tab-land) {
+    width: 20%;
   }
 
   @include apply-layout(tab-port) {
     width: 30%;
   }
 
-  @include apply-layout(tab-land) {
-    width: 20%;
+  @include apply-layout(phone) {
+    position: relative;
+    width: 40%;
+    overflow: hidden;
+    padding: 1rem .5rem;
   }
 
   &__img{
